@@ -12,7 +12,7 @@
     <% @tweets.each do |tweet| %>
       <tr>
         <td><%= tweet.message %></td>
-        <td><%= tweet.user.username%></td>
+        <td><%= tweet.user.username %></td>
         <td><%= link_to 'Show', tweet %></td>
         <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
         <td><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -21,4 +21,5 @@
   </tbody>
 </table>
 <br>
-<%= link_to 'New Tweet', new_tweet_path %>
+<%= link_to 'New Peep', new_tweet_path, class: "btn btn-primary" %>
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: "btn btn-danger" %>
