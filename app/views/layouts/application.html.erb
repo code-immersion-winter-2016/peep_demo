@@ -7,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <% if notice.present? || flash.present? %>
+    <p class="notice"><%= notice %></p>
+    <div id="error_explanation">
+      <span class=""><%= alert %></div>
+  <% end %>
 
 <%= yield %>
 
