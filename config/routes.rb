@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :relationships
   resources :profiles, only: [:index, :show]
 
+  get 'foo', to: 'profiles#someActionHere'
   root "tweets#index"
 
   devise_for :users
