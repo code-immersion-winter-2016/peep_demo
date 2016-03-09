@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :tweets
+  resources :tweets do
+    resource :like
+  end
+  resources :relationships
   resources :profiles, only: [:index, :show]
 
   root "tweets#index"

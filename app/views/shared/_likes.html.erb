@@ -1,0 +1,12 @@
+
+
+
+<%= link_to "Like", tweet_like_path(@tweet), method: :post %>
+
+
+<%= @tweet.likes.count %><br>
+
+<h3 class="">Liked By:</h3>
+<% @tweet.likes.each do |like| %>
+<%= like.user.username %><br>
+<% end %>
